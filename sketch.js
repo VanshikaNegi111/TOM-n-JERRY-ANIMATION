@@ -9,13 +9,13 @@ function preload() {
     //load the images
     farmImg = loadImage("images/garden.png");
 
-    tomImg     = loadAnimation("images/cat1.png");
-    tomImg2    = loadAnimation("images/cat2.png", "images/cat3.png");
-    tom_endImg = loadAnimation("images/cat4.png");
+    tomImg     = loadAnimation("images/tom1.png");
+    tomImg2    = loadAnimation("images/tom2.png", "images/tom3.png");
+    tom_endImg = loadAnimation("images/tom4.png");
 
-    jerryImg     = loadAnimation("images/mouse1.png");
-    jerryImg2    = loadAnimation("images/mouse2.png", "images/mouse3.png");
-    jerry_endImg = loadAnimation("images/mouse4.png");
+    jerryImg     = loadAnimation("images/jerry1.png");
+    jerryImg2    = loadAnimation("images/jerry2.png", "images/jerry3.png");
+    jerry_endImg = loadAnimation("images/jerry4.png");
     
 }
 
@@ -47,8 +47,9 @@ function setup(){
 function draw() {
     background(0,0,0);
     gameState = PLAY;
+    
     //Write condition  to evalute if tom and jerry collide
-    if(tom.x - jerry.x < (tom.width - jerry.width)/2)
+    if(tom.x - jerry.x < (tom.width + jerry.width)/2)
       {
        gameState = END;
        tom.velocityX = 0;
